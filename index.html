@@ -1,11 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mi espacio digital</title>
+<meta charset="UTF-8">
+<title>IRIS Technologies.</title>
+
+<style>
+/* --- Fondo general --- */
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: #e6e6e6;
+    background:
+        radial-gradient(circle at 20% 30%, #0c1a3a 0%, transparent 60%),
+        radial-gradient(circle at 80% 70%, #0b1630 0%, transparent 60%),
+        #081126;
+    min-height: 100vh;
+}
+
+/* --- Bordes dorados fijos --- */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(#d4af37, #ffd700, #d4af37);
+    z-index: 1000;
+}
+
+body::before { left: 0; }
+body::after { right: 0; }
+
+/* --- Contenedor central --- */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+/* --- Logo --- */
+.logo {
+    width: 180px;
+    margin-bottom: 25px;
+}
+
+/* --- Línea decorativa --- */
+.divider {
+    height: 2px;
+    margin: 30px auto;
+    width: 60%;
+    background: linear-gradient(to right,
+        transparent,
+        #d4af37,
+        #ffd700,
+        #d4af37,
+        transparent);
+}
+
+/* --- Texto descripción --- */
+.descripcion {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+</style>
+
 </head>
 <body>
-    <h1>Hola mundo</h1>
-    <p>Esta es mi página personal.</p>
+
+<div class="container">
+
+    <!-- Reemplace por su logo vectorizado -->
+    <img src="logo-iris.svg" class="logo" alt="IRIS Technologies">
+
+    <div class="divider"></div>
+
+    <div class="descripcion">
+        <p>
+        Descripción institucional en desarrollo.
+        Este espacio presentará el propósito,
+        enfoque tecnológico y visión filosófica
+        del proyecto IRIS Technologies.
+        </p>
+    </div>
+
+</div>
+
 </body>
 </html>
