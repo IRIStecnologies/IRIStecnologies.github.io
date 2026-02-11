@@ -1,0 +1,127 @@
+/* --- RESET BÁSICO --- */
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    color: #d6d0c4;
+    background: #050a18;
+    overflow-x: hidden;
+}
+
+
+/* --- FONDO AZUL OSCURO TEXTURADO SUAVE --- */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(circle at 30% 20%, #0b1833 0%, transparent 60%),
+        radial-gradient(circle at 80% 70%, #09142b 0%, transparent 60%),
+        #050a18;
+
+    filter: contrast(110%) brightness(80%);
+}
+
+
+/* --- MARCOS DORADOS FIJOS --- */
+
+.frame {
+    position: fixed;
+    inset: 20px;
+    pointer-events: none;
+    z-index: 10;
+    border: 2px solid #caa84a;
+    box-shadow:
+        0 0 12px rgba(212,175,55,0.4),
+        inset 0 0 20px rgba(212,175,55,0.15);
+}
+
+
+/* --- DESVANECIMIENTO INTERIOR --- */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 20px;
+    pointer-events: none;
+    z-index: 9;
+
+    background:
+    linear-gradient(#050a18, transparent 8%, transparent 92%, #050a18),
+    linear-gradient(90deg,#050a18, transparent 6%, transparent 94%, #050a18);
+}
+
+
+/* --- CONTENIDO CENTRAL --- */
+
+.contenido {
+    max-width: 900px;
+    margin: auto;
+    padding: 120px 40px;
+    text-align: center;
+}
+
+
+/* --- LOGO VECTORIAL SIMULADO --- */
+
+.ojo {
+    width: 260px;
+    height: 120px;
+    border: 2px solid #d4af37;
+    border-radius: 60% / 50%;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 0 15px rgba(212,175,55,0.3);
+}
+
+.iris {
+    width: 70px;
+    height: 70px;
+    background:
+        radial-gradient(circle,#d4af37 0%,#5c4b14 70%);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* --- TEXTO LOGO --- */
+
+h1 {
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-top: 25px;
+}
+
+h1 span {
+    color: #caa84a;
+}
+
+
+/* --- DIVIDER DORADO --- */
+
+.divider {
+    height: 2px;
+    width: 60%;
+    margin: 40px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #d4af37,
+        transparent
+    );
+}
+
+
+/* --- TEXTO DESCRIPCIÓN --- */
+
+.descripcion {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    opacity: 0.85;
+}
