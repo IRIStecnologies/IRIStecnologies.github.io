@@ -5,21 +5,187 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IRIStecnologies</title>
 
-<link rel="stylesheet" href="styles.css">
+<style>
+
+/* ---------- BASE GLOBAL ---------- */
+
+body{
+    margin:0;
+    font-family:Segoe UI, system-ui, sans-serif;
+    background:#04060c;
+    color:#d6b85a;
+    overflow-x:hidden;
+}
+
+.main-frame{
+    margin:25px;
+    border:1px solid rgba(212,175,55,.25);
+    padding-bottom:40px;
+    position:relative;
+}
+
+.main-frame::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    box-shadow:inset 0 0 120px rgba(0,0,0,.9);
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+    display:flex;
+    align-items:center;
+    padding:25px 40px;
+    border-bottom:1px solid rgba(212,175,55,.2);
+}
+
+header img{
+    height:55px;
+    margin-right:15px;
+}
+
+header h1{
+    font-weight:300;
+    letter-spacing:3px;
+}
+
+/* ---------- BOTONES HEX ---------- */
+
+nav{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+    padding:45px 30px 60px;
+}
+
+nav::before{
+    content:"";
+    position:absolute;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#d4af37,transparent);
+    width:90%;
+    top:55%;
+    left:5%;
+    z-index:0;
+}
+
+.hex{
+    position:relative;
+    padding:15px 42px;
+    background:#0b0f18;
+    color:#d4af37;
+    cursor:pointer;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    clip-path:polygon(8% 0,92% 0,100% 50%,92% 100%,8% 100%,0 50%);
+    border:1px solid rgba(212,175,55,.45);
+    transition:.35s;
+    z-index:1;
+}
+
+.hex:hover{
+    transform:translateY(-4px);
+    background:linear-gradient(145deg,#0b0f18,#151c2b);
+    box-shadow:
+        0 0 18px rgba(212,175,55,.4),
+        inset 0 0 10px rgba(212,175,55,.2);
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    text-align:center;
+    padding:90px 40px;
+    font-size:1.7em;
+    font-weight:300;
+}
+
+/* ---------- BLOQUES DINÁMICOS ---------- */
+
+.section-block{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    padding:90px 80px;
+    border-top:1px solid rgba(212,175,55,.15);
+    transition:.4s;
+}
+
+.section-block:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+.section-block img{
+    width:50%;
+    border-radius:10px;
+    filter:brightness(.85);
+    position:relative;
+}
+
+.section-text{
+    width:50%;
+    position:relative;
+}
+
+.section-text h2{
+    font-weight:300;
+    margin-bottom:15px;
+}
+
+.section-text p{
+    color:#cbb56c;
+    line-height:1.6;
+}
+
+/* iluminación hover */
+
+.section-block:hover{
+    background:rgba(212,175,55,.05);
+}
+
+/* ---------- MANIFIESTO ---------- */
+
+.manifesto{
+    padding:100px 60px;
+    text-align:center;
+    border-top:1px solid rgba(212,175,55,.2);
+    font-size:1.2em;
+}
+
+/* ---------- BOTÓN RRHH ---------- */
+
+.rrhh{
+    display:flex;
+    justify-content:center;
+    padding:80px 0;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    text-align:center;
+    padding:60px 40px;
+    border-top:1px solid rgba(212,175,55,.2);
+    font-size:.9em;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="frame"></div>
+<div class="main-frame">
 
 <header>
-<img src="assets/eye.png" class="logo">
-<h1 class="gold-title">IRIStecnologies</h1>
+<img src="assets/eye.png">
+<h1>IRIStecnologies</h1>
 </header>
 
-<nav class="nav-container">
-<div class="nav-line"></div>
-
+<nav>
 <div class="hex">IRIS</div>
 <div class="hex">Cortex</div>
 <div class="hex">Cairo</div>
@@ -28,56 +194,119 @@
 <div class="hex">IRSEC</div>
 <div class="hex">Axioma</div>
 <div class="hex">Investigación</div>
-
 </nav>
 
 <section class="hero">
-<h2>Un futuro tecnológico digno no se espera.<br>Se construye.</h2>
+Un futuro digno no se espera. Se construye con tecnología, ética y visión.
 </section>
 
-<section class="content">
-
-<div class="block">
-<img src="assets/cortex.jpg">
-<div class="text-block">
-<h2>Cortex</h2>
-<p>
-Motor heurístico universal que supervisa sistemas inteligentes, 
-garantizando control humano, coherencia ética y estabilidad operativa.
-</p>
+<!-- ORIGEN -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
+<div class="section-text">
+<h2>Origen y visión</h2>
+<p>IRIStecnologies nace para acompañar la transición humana hacia una civilización tecnológicamente madura, abierta al conocimiento y capaz de expandirse más allá del planeta.</p>
 </div>
-</div>
+</section>
 
-<div class="block">
-<img src="assets/iris.jpg">
-<div class="text-block">
+<!-- IRIS -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+<div class="section-text">
 <h2>IRIS</h2>
-<p>
-IA abierta diseñada para acompañar, educar y expandir capacidades humanas 
-sin restringir acceso al conocimiento.
-</p>
+<p>Una inteligencia diseñada para asistir, educar y potenciar a la humanidad sin restringir el acceso al saber ni limitar la curiosidad.</p>
 </div>
-</div>
-
-<div class="block">
-<img src="assets/cairo.jpg">
-<div class="text-block">
-<h2>Cairo</h2>
-<p>
-Sistema de aprendizaje cognitivo orientado a acelerar evolución intelectual 
-humana mediante tecnología accesible.
-</p>
-</div>
-</div>
-
 </section>
+
+<!-- CORTEX -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1581093458791-9d09a0df7fdf">
+<div class="section-text">
+<h2>Cortex</h2>
+<p>Motor heurístico de gobernanza tecnológica orientado a preservar control humano, transparencia operativa y seguridad cognitiva.</p>
+</div>
+</section>
+
+<!-- CAIRO -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<div class="section-text">
+<h2>Cairo</h2>
+<p>Sistema de aprendizaje adaptativo destinado a acelerar comprensión, habilidades técnicas y autonomía intelectual.</p>
+</div>
+</section>
+
+<!-- MODULOS -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f">
+<div class="section-text">
+<h2>Módulos</h2>
+<p>Arquitectura modular expansible que permite integrar funciones técnicas, domésticas, científicas, robóticas o de seguridad.</p>
+</div>
+</section>
+
+<!-- ROBOTICA -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e">
+<div class="section-text">
+<h2>Robótica</h2>
+<p>Desde asistencia cotidiana hasta operaciones extraplanetarias, la robótica IRIS integra autonomía, seguridad y cooperación humano-máquina.</p>
+</div>
+</section>
+
+<!-- IRSEC -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
+<div class="section-text">
+<h2>IRSEC</h2>
+<p>Infraestructura de seguridad privada basada en interconexión distribuida, respuesta autónoma y supervisión humana permanente.</p>
+</div>
+</section>
+
+<!-- AXIOMA -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa">
+<div class="section-text">
+<h2>Axioma</h2>
+<p>Sistema productivo avanzado orientado a manufactura sostenible, expansión industrial y producción extraplanetaria futura.</p>
+</div>
+</section>
+
+<!-- INVESTIGACION -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d">
+<div class="section-text">
+<h2>Investigación</h2>
+<p>Laboratorios abiertos y exploración científica constante como base del progreso tecnológico responsable.</p>
+</div>
+</section>
+
+<!-- RUTA TECNOLOGICA -->
+<section class="section-block">
+<img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564">
+<div class="section-text">
+<h2>Ruta tecnológica esperada</h2>
+<p>Desde la democratización del conocimiento hasta la expansión humana fuera del planeta, la hoja de ruta se mantiene pública para garantizar transparencia y propósito colectivo.</p>
+</div>
+</section>
+
+<section class="manifesto">
+Creemos en la dignificación integral de la humanidad mediante tecnología abierta,
+educación accesible e inteligencia artificial responsable.
+Negar conocimiento en la era de la información es limitar el futuro.
+</section>
+
+<div class="rrhh">
+<div class="hex">RRHH · Únase</div>
+</div>
 
 <footer>
 Tecnología abierta bajo licencia MIT.  
+Si utiliza nuestras herramientas o ideas, el reconocimiento será apreciado.  
 Somos IRIStecnologies.
 </footer>
 
-<script src="script.js"></script>
+</div>
 
 </body>
 </html>
