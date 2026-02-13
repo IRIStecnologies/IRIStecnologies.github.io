@@ -1,0 +1,159 @@
+/* BASE GLOBAL */
+
+body{
+    margin:0;
+    font-family:Segoe UI, system-ui, sans-serif;
+    background:#04060c;
+    color:#d6b85a;
+    overflow-x:hidden;
+}
+
+/* MARCO GLOBAL */
+
+.main-frame{
+    margin:25px;
+    border:1px solid rgba(212,175,55,.25);
+    padding-bottom:40px;
+    position:relative;
+}
+
+.main-frame::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    box-shadow:inset 0 0 120px rgba(0,0,0,.9);
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    align-items:center;
+    padding:25px 40px;
+    border-bottom:1px solid rgba(212,175,55,.2);
+}
+
+header img{
+    height:55px;
+    margin-right:15px;
+}
+
+header h1{
+    font-weight:300;
+    letter-spacing:3px;
+}
+
+/* NAV HEXAGONAL */
+
+nav{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+    padding:45px 30px 60px;
+}
+
+nav::before{
+    content:"";
+    position:absolute;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#d4af37,transparent);
+    width:90%;
+    top:55%;
+    left:5%;
+    z-index:0;
+}
+
+.hex{
+    position:relative;
+    padding:15px 42px;
+    background:#0b0f18;
+    color:#d4af37;
+    cursor:pointer;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    clip-path:polygon(8% 0,92% 0,100% 50%,92% 100%,8% 100%,0 50%);
+    border:1px solid rgba(212,175,55,.45);
+    transition:.35s;
+    z-index:1;
+}
+
+.hex:hover{
+    transform:translateY(-4px);
+    background:linear-gradient(145deg,#0b0f18,#151c2b);
+    box-shadow:
+        0 0 18px rgba(212,175,55,.4),
+        inset 0 0 10px rgba(212,175,55,.2);
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:90px 40px;
+    font-size:1.7em;
+    font-weight:300;
+}
+
+/* BLOQUES CONTENIDO */
+
+.section-block{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    padding:90px 80px;
+    border-top:1px solid rgba(212,175,55,.15);
+    transition:.4s;
+}
+
+.section-block:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+.section-block img{
+    width:50%;
+    border-radius:10px;
+    filter:brightness(.85);
+    transition:.35s;
+}
+
+.section-text{
+    width:50%;
+}
+
+.section-block:hover{
+    background:rgba(212,175,55,.05);
+}
+
+.section-block:hover img{
+    filter:brightness(1);
+}
+
+/* MANIFIESTO */
+
+.manifesto{
+    padding:100px 60px;
+    text-align:center;
+    border-top:1px solid rgba(212,175,55,.2);
+    font-size:1.2em;
+}
+
+/* RRHH */
+
+.rrhh{
+    display:flex;
+    justify-content:center;
+    padding:80px 0;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:60px 40px;
+    border-top:1px solid rgba(212,175,55,.2);
+    font-size:.9em;
+    color:#bfa75c;
+}
