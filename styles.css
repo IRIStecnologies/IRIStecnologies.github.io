@@ -119,18 +119,68 @@ margin:auto;
 padding:90px 40px;
 }
 
+/* === TARJETAS CON CORTE 45° === */
+
 .block{
 display:flex;
 gap:50px;
 align-items:center;
 margin-bottom:120px;
+position:relative;
+
+/* corte 45° esquina superior derecha */
+clip-path:polygon(
+0 0,
+calc(100% - 28px) 0,
+100% 28px,
+100% 100%,
+0 100%
+);
+
+border:1px solid rgba(212,175,55,.18);
+background:linear-gradient(160deg,#05080f,#0a1220);
+transition:.35s;
+}
+
+/* línea dorada continua en el corte */
+.block::after{
+content:"";
+position:absolute;
+inset:0;
+pointer-events:none;
+border:1px solid rgba(212,175,55,.35);
+
+clip-path:polygon(
+0 0,
+calc(100% - 28px) 0,
+100% 28px,
+100% 100%,
+0 100%
+);
+
+filter:drop-shadow(0 0 6px rgba(212,175,55,.25));
+}
+
+/* brillo suave en esquina */
+.block::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:80px;
+height:80px;
+background:linear-gradient(135deg,
+rgba(212,175,55,.35),
+transparent 70%);
+filter:blur(6px);
+pointer-events:none;
 }
 
 .block:nth-child(even){
 flex-direction:row-reverse;
 }
 
-/* RELACION DE ASPECTO CORREGIDA */
+/* IMAGEN */
 .block img{
 width:48%;
 aspect-ratio:16/9;
@@ -166,62 +216,3 @@ border-top:1px solid rgba(212,175,55,.12);
 font-size:.9em;
 color:#9c8540;
 }
-/* === EXTENSIÓN DE MARCO CON CORTES 45° SIN ELIMINAR AJUSTES PREVIOS === */
-/* Este bloque se añade al final de su CSS actual */
-
-.card {
-  position: relative;
-}
-
-/* Continuidad del borde en cortes */
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: inherit;
-  pointer-events: none;
-
-  /* geometría del corte superior derecho 45° */
-  clip-path: polygon(
-    0 0,
-    calc(100% - 22px) 0,
-    100% 22px,
-    100% 100%,
-    0 100%
-  );
-
-  /* integración visual oscuro‑dorado IRIS */
-  border-image: linear-gradient(
-    135deg,
-    rgba(212,175,55,0.75),
-    rgba(212,175,55,0.25),
-    rgba(212,175,55,0.6)
-  ) 1;
-
-  filter: drop-shadow(0 0 6px rgba(212,175,55,0.18));
-}
-
-/* Énfasis leve en esquinas cortadas */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  clip-path: polygon(
-    calc(100% - 24px) 0,
-    100% 24px,
-    100% 30px,
-    calc(100% - 30px) 0
-  );
-
-  background: linear-gradient(
-    135deg,
-    rgba(212,175,55,0.35),
-    transparent
-  );
-
-  filter: blur(3px);
-}
-
-/* Mantiene cualquier blur/backdrop previo intacto */
